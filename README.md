@@ -3,11 +3,14 @@ JMX Exporter
 
 jmx_exporter文档[https://github.com/prometheus/jmx_exporter/blob/master/README.md](/https://github.com/prometheus/jmx_exporter/blob/master/README.md)
 
-原生的jmx_exporter需要为每一个java进程启动一个exporter，并且需要部署到该进程所属的机器上。
+原生的jmx_exporter需要为每一个java进程启动一个exporter，并且需要部署到该进程所属的机器上。可能存在一台机器上有很多jvm进程，那么一台机器上也需要部署多个exporter。为了方便管理，我希望能够在一台机器上部署一个jmx_exporter.
 
 这里提供了一种解决方案：将一个jmx_exporter部署在一台机器上，同时抓取多个应用的jmx。现对于原生的jmx_exporter,只需要修改很少的配置文件即可。
 
 比如抓取两个进程的jmx，只需要将原生配置改为列表即可，增加了几个变量`jobs`,`name`,`socket`
+
+## 说明
+删除了javaagent启动方式
 
 ## 启动
 
@@ -17,7 +20,7 @@ jmx_exporter文档[https://github.com/prometheus/jmx_exporter/blob/master/README
 java -jar jmx_prometheus_httpserver_multi-0.13.0-SNAPSHOT-jar-with-dependencies.jar 8 example.yaml
 
 ```
-
+参数分别是：你要抓取的jvm进程数，配置文件
 
 ## Configuration
 The configuration is in YAML. An example with all possible options:
