@@ -151,10 +151,3 @@ io.prometheus.jmx.shaded.io.prometheus.jmx.level=ALL
 Add the following flag to your Java invocation:
 
 `-Djava.util.logging.config.file=/path/to/logging.properties`
-
-
-## Installing
-
-A Debian binary package is created as part of the build process and it can
-be used to install an executable into `/usr/bin/jmx_exporter` with configuration
-in `/etc/jmx_exporter/jmx_exporter.yaml`.
