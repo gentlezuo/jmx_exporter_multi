@@ -128,9 +128,7 @@ domain_beanPropertyValue1_key1_key2_...keyN_attrName{beanpropertyName2="beanProp
 ```
 If a given part isn't set, it'll be excluded.
 
-## Testing
 
-`mvn test` to test.
 
 ## Debugging
 
